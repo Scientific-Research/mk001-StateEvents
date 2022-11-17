@@ -1,5 +1,4 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
 import "./App.css";
 
 function App() {
@@ -11,7 +10,7 @@ function App() {
     console.log(score);
     return setScore(score);
   };
-  
+
   return (
     <div className="App">
       <button onClick={() => setCount((count) => count + 1)}>
@@ -19,6 +18,7 @@ function App() {
       </button>
       <hr />
       <button onClick={() => handleScoreChange(score)}>score = {score}</button>
+      {(count && score) !== 0 && <div>Count and Score are not Zero</div>}
     </div>
   );
 }
