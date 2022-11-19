@@ -16,14 +16,20 @@ function App() {
       setCount(0);
     }
   };
-  const handleColorChange = () => {
+  const handleColorChange = (farbe: any) => {
     // <div className={"background-green"} />;
-    <div className="background-red" style={{ backgroundColor: "red" }}></div>;
+    // <div className="background-red" style={{ backgroundColor: "red" }}></div>;
+    // const _colors = [...color];
+    // console.log(_colors);
+    console.log(farbe);
+    setColor(farbe);
   };
 
   return (
     <div className="App">
       <>
+        {(document.body.style.backgroundColor = `${color}`)};
+        {/* <div style={{ backgroundColor: `${color}` }}></div>; */}
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
@@ -31,17 +37,9 @@ function App() {
         <button onClick={() => handleScoreChange(score)}>
           score = {score}
         </button>
-
-        <button onClick={() => handleColorChange()}>
-          {
-            <div
-              className="background-red"
-              style={{ backgroundColor: "red" }}
-            ></div>
-          }
-          ; color = {color}
+        <button onClick={() => handleColorChange("yellow")}>
+          Color = {color}
         </button>
-
         {/* {(count && score) !== 0 && <div>Count and Score are not Zero</div>} */}
         {/* {score > 5 && { scoreGreaterThanFive }} */}
         {/* {score > 5 && {setCount(0)}} */}
